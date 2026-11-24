@@ -1,0 +1,10 @@
+name,company,email,phone,status,next_follow_up,notes
+Demo: Maya Torres,Juniper Street Bakery,maya@example.com,555-0101,Contacted,today-4,"DEMO DATA. Wants a menu redesign, asked for two price options."
+Demo: Owen Pratt,Pratt & Daughters Plumbing,owen@example.com,555-0102,Proposal sent,today-1,DEMO DATA. Quote sent by email. Call to answer questions.
+Demo: Lena Fischer,Harbor Light Yoga,lena@example.com,555-0103,New,today,DEMO DATA. Came through the contact form about a booking page.
+Demo: Sam Okoro,Okoro Garden Design,sam@example.com,555-0104,Contacted,today+2,DEMO DATA. Send portfolio examples before the call.
+Demo: Priya Nair,Blue Kettle Tea Co,priya@example.com,555-0105,Proposal sent,today+6,DEMO DATA. Deciding after the next team meeting.
+Demo: Theo Lambert,Lambert Bike Repair,theo@example.com,555-0106,New,today+21,DEMO DATA. Not ready yet. Asked to talk next month.
+Demo: Ines Duarte,Corner Frame Shop,ines@example.com,,New,,DEMO DATA. No date set. Needs a first call.
+Demo: Jonah Reed,Reed Accounting,jonah@example.com,555-0108,Won,,DEMO DATA. Signed. Project starts next week.
+Demo: Alma Koch,Koch Catering,alma@example.com,555-0109,Lost,,DEMO DATA. Went with another supplier.
