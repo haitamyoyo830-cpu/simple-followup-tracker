@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Follow-up Tracker</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Follow-up Tracker</h1>
+      <p id="summary" class="summary"></p>
+    </div>
+    <div class="top-actions">
+      <button type="button" id="import-button">Import CSV</button>
+      <button type="button" id="export-button">Export CSV</button>
+      <button type="button" id="add-button" class="primary">Add lead</button>
+      <input type="file" id="file-input" accept=".csv,text/csv" hidden>
+    </div>
+  </header>
+
+  <main>
+    <noscript><p class="alert">This tool needs JavaScript. Turn it on for this page and reload.</p></noscript>
+
+    <div id="storage-alert" class="alert" role="alert" hidden>
+      <p id="storage-alert-text"></p>
+      <div class="button-row">
+        <button type="button" id="save-raw-button">Download unreadable data</button>
+        <button type="button" id="start-fresh-button">Delete it and start fresh</button>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="views" role="group" aria-label="Show leads">
+        <button type="button" data-view="due">Due now <span class="count"></span></button>
+        <button type="button" data-view="open">Open <span class="count"></span></button>
+        <button type="button" data-view="closed">Closed <span class="count"></span></button>
+        <button type="button" data-view="all">All <span class="count"></span></button>
+      </div>
+      <label class="search">
+        <span class="visually-hidden">Search leads</span>
+        <input type="search" id="search" placeholder="Search name, company, notes">
+      </label>
+    </div>
+
+    <div id="message" class="message" hidden>
+      <span id="message-text" role="status"></span>
+      <button type="button" id="undo-button" hidden>Undo</button>
+    </div>
+
+    <div id="list" tabindex="-1" aria-label="Leads"></div>
+  </main>
+
+  <footer>
+    Saved only in this browser, on this device. Use Export CSV to keep a backup.
+  </footer>
+
+  <dialog id="lead-dialog" aria-labelledby="lead-dialog-title">
+    <form id="lead-form" novalidate>
+      <h2 id="lead-dialog-title">Add lead</h2>
+      <div class="fields">
+        <label>Name (required)
+          <input name="name" autocomplete="off">
+          <span class="field-error" data-error-for="name"></span>
+        </label>
+        <label>Company
+          <input name="company" autocomplete="off">
+          <span class="field-error" data-error-for="company"></span>
+        </label>
+        <label>Email
+          <input name="email" type="email" autocomplete="off">
+          <span class="field-error" data-error-for="email"></span>
+        </label>
+        <label>Phone
+          <input name="phone" type="tel" autocomplete="off">
+          <span class="field-error" data-error-for="phone"></span>
+        </label>
+        <label>Status
+          <select name="status"></select>
+          <span class="field-error" data-error-for="status"></span>
+        </label>
+        <label>Next follow-up
+          <input name="nextFollowUp" type="date">
+          <span class="field-error" data-error-for="nextFollowUp"></span>
+        </label>
+        <label class="wide">Notes
+          <textarea name="notes" rows="4"></textarea>
+          <span class="field-error" data-error-for="notes"></span>
+        </label>
+      </div>
+      <p id="form-error" class="field-error" role="alert"></p>
+      <div class="button-row end">
+        <button type="button" data-close>Cancel</button>
+        <button type="submit" class="primary">Save lead</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="import-dialog" aria-labelledby="import-dialog-title">
+    <h2 id="import-dialog-title">Import CSV</h2>
+    <p id="import-summary"></p>
+    <ul id="import-details"></ul>
+    <p id="import-replace-note" class="muted"></p>
+    <div class="button-row end">
+      <button type="button" data-close>Cancel</button>
+      <button type="button" id="import-replace">Replace all leads</button>
+      <button type="button" id="import-add" class="primary">Add leads</button>
+    </div>
+  </dialog>
+
+  <!-- Classic scripts, not modules: browsers block ES modules on file:// pages. -->
+  <script src="core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

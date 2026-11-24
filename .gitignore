@@ -1,0 +1,9 @@
+# Backups made by the app. They hold real client details, so keep them out of Git.
+followup-backup-*.csv
+unreadable-leads*.json
+
+# System and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
